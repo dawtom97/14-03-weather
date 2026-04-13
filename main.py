@@ -15,3 +15,8 @@ result = read_excel("weather_data.xlsx")
 # render_dashboard("lisbon.xlsx")
 
 
+# git add .
+# git commit -m 'wiadmosc'
+# git push
+
+# git push -u origin nazwa_galezi
