@@ -77,3 +77,20 @@ def save_to_mysql(weather):
 
     except Exception as e:
         print(e)
+
+
+def get_all_weather():
+    try:
+        conn = create_connection()
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute(f"USE {Config.DB_NAME};")
+
+        query = "SELECT * FROM weather_data ORDER BY timestamp DESC"
+
+        cursor.execute(query)
+
+        results = cursor.fetchall()
+        conn.close()
+        return results
+    except Exception as e:
+        print(e)
